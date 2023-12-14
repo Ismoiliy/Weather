@@ -1,0 +1,212 @@
+@import 'fonts.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__search {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        & input {
+            background: rgba(71, 147, 255, 0.2);
+            border-radius: 10px;
+            padding: 9px 0 9px 20px;
+            width: 194px;
+            border: none;
+            outline: none;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: #000000;
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+
+    & span {
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 30px;
+        text-transform: uppercase;
+        color: #4793FF;
+    }
+}
+
+.main {
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+
+        &_left {
+            background: #FFFFFF;
+            box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+            border-radius: 20px;
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+            padding: 20px;
+
+            & img {
+                position: absolute;
+                top: 46px;
+                right: 20px;
+                width: 120px;
+                height: 120px;
+            }
+
+            &-title {
+                font-weight: 500;
+                font-size: 96px;
+                line-height: 117px;
+                color: #4793FF;
+                margin-bottom: 14px;
+            }
+
+            &-text {
+                font-size: 40px;
+                line-height: 49px;
+                color: #000000;
+                margin-bottom: 31px;
+            }
+
+            &-time,
+            &-city {
+                font-size: 25px;
+                line-height: 30px;
+                color: #939CB0;
+            }
+
+            &-city {
+                margin-top: 14px;
+            }
+
+
+        }
+
+        &_right {
+            position: relative;
+            max-width: 750px;
+            width: 100%;
+            padding: 42px 0 42px 31px;
+            background: #FFFFFF;
+            box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            &>img {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+            &_item {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                position: relative;
+                z-index: 5;
+
+                &-img {
+                    width: 38px;
+                    height: 38px;
+                    background: #FFFFFF;
+                    box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                & span {
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #939CB0;
+                }
+
+                & p {
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #000000;
+                }
+            }
+        }
+    }
+
+    &__week {
+        background: #FFFFFF;
+        box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+        border-radius: 0px 0px 20px 20px;
+        padding: 20px;
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 20px;
+
+        &_day {
+            background: rgba(71, 147, 255, 0.2);
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+            max-width: 150px;
+
+            &-title,
+            &-text {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;
+                color: #000000;
+            }
+
+            &-text {
+                margin-top: 13px;
+            }
+
+            &-date,
+            &-feels,
+            &-desc {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #939CB0;
+                margin-top: 7px;
+                margin-bottom: 12px;
+            }
+
+            & img {
+                width: 48px;
+                height: 48px;
+            }
+
+        }
+    }
+
+}

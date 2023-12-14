@@ -1,30 +1,35 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="container">
+    <Navbar />
+    <Main v-if="weather" />
+
+    <div v-else class="loading">
+      <h2 class="load">Подождите идёт загрузка ... </h2>
+    </div>
+
+  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Main from './components/Main.vue';
+import Navbar from './components/Navbar.vue';
+import { mapActions, mapState } from 'vuex';
 
-nav {
-  padding: 30px;
+export default {
+  components: { Navbar, Main },
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  computed: {
+    ...mapState(['weather'])
+  },
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  methods: {
+    ...mapActions(['getWeather'])
+  },
+
+  created() {
+    this.getWeather('ташкент')
   }
+
+
 }
-</style>
+</script>
